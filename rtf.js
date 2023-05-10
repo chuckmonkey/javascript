@@ -23,9 +23,6 @@ function toRTF(alt_text) {
   }
   
   rtfText=rtfPrefix+rtfText+"}";
-  //rtfText=rtfText.replaceAll("\'","&#39;");
   return rtfText;
-  
-  //setElementValue("comment_rtf", rtfText);
-  //navigator.clipboard.writeText(rtfText);
+ 
 }
