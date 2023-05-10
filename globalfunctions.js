@@ -1,0 +1,12 @@
+function typeCheck(value) {
+  /*
+   * 04 may 2023 [cm] .. return data type of value
+   */
+  const return_value = Object.prototype.toString.call(value);
+  // we can also use regex to do this...
+  const type = return_value.substring(
+           return_value.indexOf(" ") + 1, 
+           return_value.indexOf("]"));
+
+  return type.toLowerCase();
+}
