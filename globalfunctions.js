@@ -197,3 +197,14 @@ function getToday() {
   var today = thisDate.getFullYear()+'-'+("0"+(thisDate.getMonth()+1)).slice(-2)+'-'+("0"+thisDate.getDate()).slice(-2);
   return today;
 }
+
+function niceDate(dtThisDate) {
+  /*
+   * 12 apr 2019 [cm] .. Format date into Fri, April 12, 2019 format
+   */
+  var sDate=dtThidDate;
+  if (typeCheck(dtThisDate)==="date") {
+    sDate=HSLdays[dtThisDate.getDay()]+", "+HSLmonths[dtThisDate.getMonth()].substring(0,3)+" "+dtThisDate.getDate()+", "+dtThisDate.getFullYear();
+  }
+  return sDate;
+}
