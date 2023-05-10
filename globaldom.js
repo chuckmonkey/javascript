@@ -1,3 +1,4 @@
+// Functions for getting/setting elements in DOM, using ID
 function getElementValue(elementID) {
   // Return value of element, if it exists
   var value="";
@@ -44,3 +45,56 @@ function swapElementValues(elemID1, elemID2) {
   setElementValue(elemID2, docElem1);
 
 }
+
+
+function getElementinnerHTML(elementID) {
+  /*
+   * 12 apr 2019 [cm] .. Return element innerHTML
+   */
+  var value="";
+  var thisElem=document.getElementById(elementID);
+  if (thisElem) value=thisElem.innerHTML;
+  return value;
+}
+
+function setElementinnerHTML(elementID, value) {
+  /*
+   * 12 apr 2019 [cm] ..Set innerHTML to value for a given element
+   */
+  var thisElem=document.getElementById(elementID);
+  if (thisElem) {
+    thisElem.innerHTML=value;
+  } else {
+    //console.log("Could not find "+elementID);
+  }
+}
+
+function getElementChecked(elementID) {
+  /*
+   * 12 apr 2019 [cm] .. Return true/false if element checkbox is checked
+   */
+  var thisElem=document.getElementById(elementID);
+  if (thisElem) {
+    return (thisElem.checked);
+  }
+  return false;
+}
+
+function setElementChecked(elementID, bChecked) {
+  /*
+   * 12 apr 2019 [cm] .. Set element checkbox to checked/not checked
+   */
+  var thisElem=document.getElementById(elementID);
+  if (thisElem) {
+    thisElem.checked=bChecked;
+  }
+}
+
+function setElementDisabled(elementID, bDisabled) {
+  // 18 AUG 2020 ml (2020.57) -- Set element to enabled/disabled.
+  var thisElem=document.getElementById(elementID);
+  if (thisElem) {
+    thisElem.disabled=bDisabled;
+  }
+}
+
