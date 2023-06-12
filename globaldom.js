@@ -98,3 +98,27 @@ function setElementDisabled(elementID, bDisabled) {
   }
 }
 
+
+function getElementStyleById(elemID, styleProp) {
+  var el=document.getElementById(elemID;
+  var y=null;
+  if (el) {
+    if (window.getComputedStyle) {
+      y = document.defaultView.getComputedStyle(el,null).getPropertyValue(styleProp);
+    } else if (el.currentStyle) {
+      y = el.currentStyle[styleProp];
+    }
+  }
+  return y;
+}
+
+function getElementStyle(el, styleProp) {
+  var y=null;
+  if (window.getComputedStyle) {
+    y = document.defaultView.getComputedStyle(el,null).getPropertyValue(styleProp);
+  } else if (el.currentStyle) {
+    y = el.currentStyle[styleProp];
+  }
+
+  return y;
+}
