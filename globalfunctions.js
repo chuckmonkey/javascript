@@ -42,7 +42,7 @@ function getDaysInYear(year) {
   return numofdays;
 }
 
-function getDaysInMonth(year, month) {
+function getDaysInMonth(month, year) {
   // 02 may 2023 [cm] .. return number of days in month, for give year
   var numofdays=HSLdaysinmonth[(month-1)];
   if ((month===2) && (isLeapYear(year))) {
@@ -126,7 +126,7 @@ function countDays(startDate, endDate) {
           workMonth=12;
           workYear--;
         }
-        var daysThisMonth=getDaysInMonth(workYear, (workMonth));
+        var daysThisMonth=getDaysInMonth((workMonth), workYear);
         workDay=daysThisMonth;
       }
 
